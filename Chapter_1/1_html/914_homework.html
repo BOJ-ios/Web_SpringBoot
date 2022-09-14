@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Simple</title>
+  </head>
+  <style>
+    table {
+      border: 1px solid black;
+    }
+    td,
+    th {
+      border: 1px solid black;
+      height: 20px;
+    }
+    h1 {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-top: 3px double gray;
+      border-bottom: 3px double gray;
+    }
+  </style>
+  <body style="background-color: rgb(255, 246, 166)">
+    <h1>게시판</h1>
+    <table>
+      <head>
+        <tr>
+          <th>ID</th>
+          <th>이름</th>
+          <th>학년</th>
+          <th>내용</th>
+        </tr>
+      </head>
+      <tbody>
+        <tr>
+          <td>ppiyak</td>
+          <td>나삐약</td>
+          <td>2</td>
+          <td>저는 아직도 삐약이라서 코딩 어려워요</td>
+        </tr>
+        <tr>
+          <td>great</td>
+          <td>엄청나</td>
+          <td>4</td>
+          <td>저는 갓코딩입니다. 으허허허</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      &nbsp;&nbsp; ID : <input type="text" id="id" /><br />
+      이름 : <input type="text" /><br />
+      학년 : <input type="radio" name="grade" value="1" /> 1
+      <input type="radio" name="grade" value="2" /> 2
+      <input type="radio" name="grade" value="3" /> 3
+      <input type="radio" name="grade" value="4" /> 4 <br />
+      내용 : <input type="text" size="50" />
+    </p>
+    <strong><p>이상 2주차 과제였습니다 ^ ^</p></strong>
+  </body>
+</html>
