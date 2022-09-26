@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>Quiz 03 Answer</title>
+  </head>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+  <body style="background-color: aqua">
+    <h1>오늘의 명언</h1>
+    <table>
+      <tr>
+        <th>위인</th>
+        <td><span th:text="${wiseperson}"></span></td>
+      </tr>
+      <tr>
+        <th>명언</th>
+        <td><span th:text="${wisesaying}"></span></td>
+      </tr>
+    </table>
+  </body>
+</html>
