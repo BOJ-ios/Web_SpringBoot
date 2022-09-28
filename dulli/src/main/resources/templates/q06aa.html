@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.com">
+  <head>
+    <meta charset="utf-8" />
+    <title th:text="|${first} & ${second}|"></title>
+  </head>
+  <body>
+    <p>
+      조만간 봅시다 ^^ - <strong th:text="${first}"></strong> 인사 담당 팀장 -
+    </p>
+    <p>
+      아니요, 우리 회사로 꼭 오세요!! -
+      <strong th:text="${second}"></strong> 인사 담당 팀장 -
+    </p>
+  </body>
+</html>
