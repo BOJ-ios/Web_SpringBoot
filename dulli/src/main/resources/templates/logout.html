@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.com">
+  <head>
+    <meta charset="UTF-8" />
+    <title>logout</title>
+  </head>
+  <body style="text-align: center">
+    <span style="color: rgb(173, 173, 255)" th:text="${id}">id</span>
+    님께서 로그아웃하셨습니다.
+    <p>다음에 또 만나요!!</p>
+    <p>
+      <span style="color: gray; font-size: 0.8em">
+        (아래 그림을 클릭하시면 첫 화면으로 이동합니다.) </span
+      ><br />
+      <a href="/login">
+        <img src="logout.png" width="300" heigt="220" alt="바이바이 그림" />
+      </a>
+    </p>
+  </body>
+</html>
