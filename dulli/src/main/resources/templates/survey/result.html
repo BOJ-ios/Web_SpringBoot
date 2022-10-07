@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.thymeleaf.com">
+  <head>
+    <title>설문 결과</title>
+    <meta charset="UTF-8" />
+  </head>
+  <style>
+    p,
+    span {
+      font-size: 25px;
+      font-weight: bold;
+    }
+    body {
+      background-color: chartreuse;
+    }
+  </style>
+  <body>
+    <p><span style="color: blue" ; th:text="${id}">id</span>님은</p>
+    <p><span th:text="${artist}">artist</span> 화가님과</p>
+    <p>
+      <span th:text="${musician}">musician</span> 음악가님을 선택하셨습니다!!
+    </p>
+  </body>
+</html>
