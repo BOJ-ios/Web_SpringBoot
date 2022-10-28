@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class VanController1 {
+  @GetMapping("/")
+  public String home() {
+    return "home";
+  }
+
   @Autowired
   private MemberRepository memRep;
 
@@ -16,5 +21,15 @@ public class VanController1 {
     List<Member> list = memRep.findAll();
     mo.addAttribute("list", list);
     return "memberList";
+  }
+
+  @Autowired
+  private SaleRepository saleRep;
+
+  @GetMapping("/saleList")
+  public String Sale(Model mo) {
+    List<Sale> list = saleRep.findAll();
+    mo.addAttribute("list", list);
+    return "saleList";
   }
 } // class
