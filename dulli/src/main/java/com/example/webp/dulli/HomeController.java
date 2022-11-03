@@ -40,10 +40,14 @@ public class HomeController {
     model.addAttribute("po", po);
     int salary = 0;
     switch (po) {
-      case "사원" -> salary = 3500;
-      case "대리" -> salary = 5000;
-      case "팀장" -> salary = 7000;
-      case "임원" -> salary = 9900;
+      case "사원":
+        salary = 3500;
+      case "대리":
+        salary = 5000;
+      case "팀장":
+        salary = 7000;
+      case "임원":
+        salary = 9900;
     }
     model.addAttribute("salary", salary);
     return "ex02Answer";

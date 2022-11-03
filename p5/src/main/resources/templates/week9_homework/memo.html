@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>메모작성</title>
+  </head>
+  <body style="background-color: antiquewhite">
+    <form method="post" action="/memo/insert">
+      <h1>자유롭게 작성하기</h1>
+      <p>제목: <input type="text" name="title" required /></p>
+      <p>
+        내용:<br />
+        <textarea rows="4" cols="50" name="memo_content" required></textarea>
+      </p>
+      <input type="submit" value="저장" />
+    </form>
+  </body>
+</html>
