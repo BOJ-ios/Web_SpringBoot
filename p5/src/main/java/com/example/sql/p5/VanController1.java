@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class VanController1 {
@@ -13,6 +14,7 @@ public class VanController1 {
     return "home";
   }
 
+  // memberList
   @Autowired
   private MemberRepository memRep;
 
@@ -23,6 +25,7 @@ public class VanController1 {
     return "memberList";
   }
 
+  // saleList
   @Autowired
   private SaleRepository saleRep;
 
@@ -32,4 +35,24 @@ public class VanController1 {
     mo.addAttribute("list", list);
     return "saleList";
   }
-} // class
+
+  // register
+  @GetMapping("/member/register")
+  public String memberRegister() {
+    return "memberRegister";
+  }
+
+  // register insert
+  @PostMapping("/member/insert")
+  public String memberInsert(String id, String pw, String name, String phone, Model mo) {
+    Member member = new Member();
+    member.id = id;
+    member.pw = pw;
+    member.name = name;
+    member.phone = phone;
+    member.balance = 0;
+    memRep.save(member);
+    mo.addAttribute("msg", id + "님, 회원가입을 축하드립니다!!");
+    return "popups";
+  }
+} // Controller class

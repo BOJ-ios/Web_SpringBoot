@@ -19,7 +19,7 @@ public class LoginController {
   @PostMapping("/login/check")
   public String loginCheck(HttpSession session, String id) {
     ArrayList<String> list = new ArrayList<>();
-    list.add("고흐");
+    list.add("임준현");
     list.add("빅맥");
     list.add("dooli");
     list.add("bread");

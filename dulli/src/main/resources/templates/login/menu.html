@@ -3,18 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <title>메뉴화면</title>
+    <link href="main.css" rel="stylesheet" />
   </head>
-  <body style="background-color: rgb(158, 253, 158)">
-    <h1>MENU</h1>
+  <style>
+    
+  </style>
+  <body
+    style="
+      background-color: #f9f5f4;
+      width: 90%;
+      text-align: center;
+      margin: auto;
+    "
+  >
+    <span
+      style="
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        background-color: lightgray;
+        padding-left: 10px;
+        padding-right: 10px;
+      "
+    >
+      <a href="/"><h1 style="display: inline; margin: 0px; cursor: pointer;">MENU</h1></a>
+      <a style="color: black" href="/logout"
+        ><input type="button" value="로그아웃"
+      /></a>
+    </span>
     <hr />
     <span style="color: blue" th:text="${id}"> id</span>님, 오늘도 즐겁게
     쇼핑하세요! <br />
     <hr />
-    <ul>
-      <li>hamburger</li>
-      <li>bread</li>
-      <li>coffee</li>
-      <li><a href="/logout">logout</a></li>
-    </ul>
+    <img onclick="set_hamburger_count()" onmouseover="hover_price(0)" onmouseout="hover_price(3)"alt=" " src="889693.png" />
+    <img onclick="set_fries_count()" onmouseover="hover_price(1)"onmouseout="hover_price(3)" alt=" " src="2674067.png" />
+    <img onclick="set_coke_count()" onmouseover="hover_price(2)" onmouseout="hover_price(3)" alt=" " src="3917905.png" />
+    <hr />
+    <div>
+      <div style="display: flex; justify-content: space-between">
+      <span id="productname">상품을 입력해주세요</span>
+      <span><span id="productprice"></span>원</span>
+    </div>
+    <hr>
+    <div style="display: flex; justify-content: space-between">
+      <span>총 금액 : <strong id="total_price">0</strong>원</span>
+      <input onclick="reset()" type="button" value="장바구니 비우기" />
+    </div>
+    <div style="display: flex; justify-content: space-between">
+      <p>햄버거</p>
+      <p><strong id="hamburger_count">0</strong>개</p>
+    </div>
+    <div style="display: flex; justify-content: space-between">
+      <p>감자튀김</p>
+      <p><strong id="fries_count">0</strong>개</p>
+    </div>
+    <div style="display: flex; justify-content: space-between">
+      <p>콜라</p>
+      <p><strong id="coke_count">0</strong>개</p>
+    </div>
+    <script>
+      reset();
+      var total_price = parseInt(0);
+      let dicArray = [{name: "햄버거", price: parseInt(50000)}, {name: "감자튀김", price: parseInt(2000)}, {name: "콜라", price: parseInt(5000)}, {name:"상품을 입력하세요", price:""}];
+      function set_hamburger_count() {
+        localStorage.setItem(
+          "hamburger",
+          parseInt(localStorage.getItem("hamburger")) + parseInt(1)
+        );
+        document.getElementById("hamburger_count").innerHTML =
+          localStorage.getItem("hamburger");
+        total_price += dicArray[0].price;
+        show_price();
+      }
+      function set_fries_count() {
+        localStorage.setItem(
+          "fries",
+          parseInt(localStorage.getItem("fries")) + parseInt(1)
+        );
+        document.getElementById("fries_count").innerHTML =
+          localStorage.getItem("fries");
+        total_price += dicArray[1].price;
+        show_price();
+      }
+      function set_coke_count() {
+        localStorage.setItem(
+          "coke",
+          parseInt(localStorage.getItem("coke")) + parseInt(1)
+        );
+        document.getElementById("coke_count").innerHTML =
+          localStorage.getItem("coke");
+        total_price += dicArray[2].price;
+        show_price();
+      }
+      function reset() {
+        localStorage.setItem("hamburger", parseInt(0));
+        localStorage.setItem("fries", parseInt(0));
+        localStorage.setItem("coke", parseInt(0));
+        document.getElementById("hamburger_count").innerHTML = parseInt(0);
+        document.getElementById("fries_count").innerHTML = parseInt(0);
+        document.getElementById("coke_count").innerHTML = parseInt(0);
+        total_price = parseInt(0);
+        show_price();
+      }
+      function hover_price(num){        
+        document.getElementById("productname").innerHTML = dicArray[num].name;
+        document.getElementById("productprice").innerHTML = dicArray[num].price;
+      }
+      function show_price(){
+        document.getElementById("total_price").innerHTML = total_price;
+      }
+    </script>
   </body>
 </html>
