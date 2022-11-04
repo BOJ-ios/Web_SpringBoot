@@ -10,9 +10,9 @@ public class Member {
   @Id
   public String id;
   public String pw;
-  public String name;
+  String name;
   public String phone;
   public Integer balance;
   @CreationTimestamp
   public LocalDateTime rdate;
-} // class
+}

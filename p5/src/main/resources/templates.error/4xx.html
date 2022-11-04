@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>400</title>
+  </head>
+  <body style="background-color: #fbeffb">
+    <img src="/erorr4xx.png" width="250" height="280" alt="4xxerror image" />
+    <span style="color: gray; font-size: 0.7em">photo by writer</span><br />
+    <h2>400번대 에러 페이지입니다.</h2>
+    <strong>에러 코드 : </strong><span th:text="${status}"></span><br />
+    <strong>path : </strong><span th:text="${path}"></span><br />
+    <strong>에러 이름 : </strong>
+    <span th:text="${error}" style="background-color: aqua"></span><br />
+    <strong>예외 : </strong><span th:text="${exception}"></span>
+    <p></p>
+    <p>
+      <a href="/">첫 화면으로 돌아가기</a>
+    </p>
+  </body>
+</html>
