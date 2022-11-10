@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.thymeleaf.com">
+  <head>
+    <meta charset="utf-8" />
+    <title>우승</title>
+  </head>
+  <style>
+    div {
+      box-sizing: border-box;
+    }
+    .container {
+      width: 90%;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .result_box {
+      min-width: 1050px;
+      width: 90%;
+      text-align: center;
+      border-radius: 6px;
+      background-color: gold;
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 3px;
+    }
+    .source_box {
+      width: 90%;
+      text-align: right;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    body {
+      margin: 0;
+    }
+    html {
+      line-height: 1.15; /*기본 행간 높이*/
+    }
+    img {
+      border-radius: 6px;
+      height: 350px;
+      width: 550px;
+      object-fit: cover;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="result_box">
+        <h1>Congratulations</h1>
+        <h3 th:text="|승자는 ${winner}입니다!!!|"></h3>
+        <img th:src="|/${winner}.jpg|" alt="winner_img" />
+        <p><a href="/star/list">결과 보기</a></p>
+      </div>
+      <div class="source_box">
+        <p>그림출처 : 네이버</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.thymeleaf.com">
+  <head>
+    <meta charset="utf-8" />
+    <title>Choice 1</title>
+  </head>
+  <style>
+    div {
+      box-sizing: border-box;
+    }
+    .container {
+      width: 90%;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .table_box {
+      min-width: 1050px;
+      width: 90%;
+      background-color: rgb(209, 186, 255);
+      border-radius: 6px;
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 3px;
+    }
+    .source_box {
+      width: 90%;
+      text-align: right;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    body {
+      margin: 0;
+    }
+    html {
+      line-height: 1.15; /*기본 행간 높이*/
+    }
+    img {
+      border-radius: 6px;
+      height: 250px;
+      width: 450px;
+      object-fit: cover;
+    }
+    table {
+      border: 1px solid black;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    td,
+    th {
+      border: 1px solid black;
+      padding: 3px;
+    }
+    .btn_choose {
+      margin: 15px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="table_box">
+        <form action="/star/2" method="get">
+          <h2>What is your favorite car? (First Round)</h2>
+          <table>
+            <tr>
+              <td>
+                <img th:src="|/${choice1_1}.jpg|" alt="choice1_1_img" />
+              </td>
+              <td>
+                <img th:src="|/${choice1_2}.jpg|" alt="choice1_2_img" />
+              </td>
+            </tr>
+            <th>
+              <input type="radio" name="choice1" th:value="${choice1_1}" />
+              <span th:text="${choice1_1}"></span>
+            </th>
+            <th>
+              <input type="radio" name="choice1" th:value="${choice1_2}" />
+              <span th:text="${choice1_2}"></span>
+            </th>
+          </table>
+          <input class="btn_choose" type="submit" value="선택" />
+        </form>
+      </div>
+      <div class="source_box">
+        <p>그림출처 : 네이버</p>
+      </div>
+    </div>
+  </body>
+</html>
