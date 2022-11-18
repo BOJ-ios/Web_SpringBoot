@@ -1,4 +1,4 @@
-package com.example.sql.p5;
+package com.p7.bank;
 
 import java.time.LocalDateTime;
 import javax.persistence.Entity;

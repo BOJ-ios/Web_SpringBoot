@@ -11,6 +11,16 @@ import org.springframework.stereotype.Repository;
 public interface StarRepository extends JpaRepository<Star, Integer> {
   @Transactional
   @Modifying
-  @Query("update Star s set s.count=s.count+1 where name=?1")
-  int updateCount(String name);
+  @Query("update Star set count_semi=count_semi+1 where name=?1")
+  int updateSemiCount(String name);
+
+  @Transactional
+  @Modifying
+  @Query("update Star set count_final=count_final+1 where name=?1")
+  int updateFinalCount(String name);
+
+  @Transactional
+  @Modifying
+  @Query("update Star set count_semi=0, count_final=0")
+  int resetCount();
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>회원 가입</title>
+  </head>
+  <style>
+    span {
+      color: gray;
+      font-size: 0.7em;
+    }
+  </style>
+  <body style="background-color: #f8ece0">
+    <form method="get" action="/member/insert">
+      <p></p>
+      <fieldset style="background-color: #fbf8ef">
+        <legend><strong>회원 정보를 입력하세요</strong></legend>
+        <br />
+        <table>
+          <tr>
+            <td>ID</td>
+            <td><input type="text" name="id" required /></td>
+          </tr>
+          <tr>
+            <td>PW</td>
+            <td><input type="password" name="pw" required /></td>
+          </tr>
+          <tr>
+            <td>이름</td>
+            <td>
+              <input type="text" name="name" required />
+            </td>
+          </tr>
+          <tr>
+            <td>폰</td>
+            <td><input type="text" name="phone" required /></td>
+          </tr>
+        </table>
+        <br />
+      </fieldset>
+      <br />
+      <a href="/login">취소(로그인 화면으로)</a>&nbsp;&nbsp;
+      <input type="submit" value="회원등록" />
+    </form>
+  </body>
+</html>

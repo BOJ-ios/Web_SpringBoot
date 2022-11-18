@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.com">
+  <head>
+    <title>회원정보</title>
+  </head>
+  <body>
+    <h3>
+      <span style="color: rgb(163, 163, 255)" th:text="${m.id}"> id</span>님의
+      정보
+    </h3>
+    <form method="get" action="/myinfo/update">
+      <p></p>
+      <fieldset style="background-color: #fbf8ef">
+        <legend><strong>회원 정보 조회 및 변경</strong></legend>
+        <br />
+        <table width="300">
+          <tr>
+            <td>password</td>
+            <td>
+              <input type="text" name="pw" th:value="${m.pw}" />
+            </td>
+          </tr>
+          <tr>
+            <td>이름</td>
+            <td>
+              <input type="text" name="name" th:value="${m.name}" />
+            </td>
+          </tr>
+          <tr>
+            <td>폰</td>
+            <td>
+              <input type="text" name="phone" th:value="${m.phone}" />
+            </td>
+          </tr>
+          <tr>
+            <td>현재 잔액</td>
+            <td>
+              <input type="text" th:value="${won}" disabled />
+            </td>
+          </tr>
+          <tr>
+            <td>회원가입일시</td>
+            <td>
+              <input type="text" th:value="${m.rdate}" disabled />
+            </td>
+          </tr>
+        </table>
+        <p></p>
+      </fieldset>
+      <p>
+        <a href="/menu">메뉴로 돌아가기</a> &nbsp;
+        <input type="submit" value="변경된 내용으로 수정" />
+      </p>
+    </form>
+  </body>
+</html>

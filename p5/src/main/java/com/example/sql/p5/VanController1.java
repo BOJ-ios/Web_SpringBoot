@@ -1,5 +1,6 @@
 package com.example.sql.p5;
 
+import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -133,6 +134,7 @@ public class VanController1 {
 
   @GetMapping("/star/2")
   public String star2(HttpSession session, Model mo, String choice1) {
+    starRep.updateSemiCount(choice1);
     session.setAttribute("choice1", choice1);
     String choice2_1 = "포르쉐 타이칸";
     String choice2_2 = "벤츠 EQE";
@@ -143,6 +145,7 @@ public class VanController1 {
 
   @GetMapping("/star/3")
   public String star3(HttpSession session, Model mo, String choice2) {
+    starRep.updateSemiCount(choice2);
     mo.addAttribute("choice1", session.getAttribute("choice1"));
     mo.addAttribute("choice2", choice2);
     return "star3";
@@ -150,7 +153,7 @@ public class VanController1 {
 
   @GetMapping("/star/winner")
   public String starWinner(String winner, Model mo) {
-    // starRep.updateCount(winner);
+    starRep.updateFinalCount(winner);
     mo.addAttribute("winner", winner);
     return "starWinner";
   }
@@ -160,5 +163,11 @@ public class VanController1 {
     List<Star> list = starRep.findAll();
     mo.addAttribute("list", list);
     return "starList";
+  }
+
+  @GetMapping("/star/reset")
+  public String starReset() {
+    starRep.resetCount();
+    return "redirect:/star/list";
   }
 } // Controller class

@@ -8,5 +8,6 @@ public class Star {
   @Id
   public Integer no;
   public String name;
-  public Integer count;
+  public Integer count_semi;
+  public Integer count_final;
 }

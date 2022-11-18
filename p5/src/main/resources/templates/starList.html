@@ -7,18 +7,28 @@
   <body style="background-color: rgb(255, 255, 128)">
     <div align="center">
       <h2>투표 결과</h2>
-      <table width="250" border="1">
+      <table width="300" border="1">
         <tr>
           <th>이름</th>
-          <th>표의 수</th>
+          <th>준결승 통과</th>
+          <th>최종 우승</th>
         </tr>
         <tr th:each="m:${list}">
-          <td th:text="${m.name}">no</td>
-          <td style="color: red; text-align: right" th:text="${m.count}">id</td>
+          <td th:text="${m.name}">name</td>
+          <td style="color: blue; text-align: right" th:text="${m.count_semi}">
+            count
+          </td>
+          <td style="color: red; text-align: right" th:text="${m.count_final}">
+            count
+          </td>
         </tr>
       </table>
       <br />
-      <a href="/star/1">처음 부터</a>
+      <form method="get" action="/star/reset">
+        <input type="submit" value="투표결과 초기화" />
+      </form>
+      <br />
+      <a href="/star/1">4강전 다시 시작</a>
     </div>
   </body>
 </html>
