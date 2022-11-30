@@ -16,4 +16,17 @@ public interface MemberRepository extends JpaRepository<Member, String> {
 
   @Query("select count(id) from Member")
   int countId();
+
+  @Query("select balance from Member where id=?1")
+  int findBalance(String id); /* 잔액 조회 */
+
+  @Modifying
+  @Query("update Member set balance=balance+?2 where id=?1")
+  int updateBalance(String id, int money);
+
+  @Query("select count(id) from Member")
+  int findCount(); /* 로그인화면에서 사용했던 총회원수 메소드 */
+
+  @Query("select sum(balance) from Member")
+  int findSum(); /* 총잔액 */
 } // interface

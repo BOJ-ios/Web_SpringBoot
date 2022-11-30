@@ -25,6 +25,7 @@
       padding: 3px;
     }
     .source_box {
+      min-width: 1050px;
       width: 90%;
       text-align: right;
       margin-left: auto;
@@ -54,6 +55,7 @@
     }
     .btn_choose {
       margin: 15px;
+      height: 29px;
     }
   </style>
   <body>
@@ -79,6 +81,7 @@
               <span th:text="${choice2_2}"></span>
             </th>
           </table>
+          <input type="hidden" name="choice1" th:value="${choice1}" />
           <input class="btn_choose" type="submit" value="선택" />
         </form>
       </div>

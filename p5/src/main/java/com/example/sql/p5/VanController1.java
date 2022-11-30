@@ -125,28 +125,24 @@ public class VanController1 {
 
   @GetMapping("/star/1")
   public String star1(Model mo) {
-    String choice1_1 = "테슬라 모델 3";
-    String choice1_2 = "아이오닉 6";
-    mo.addAttribute("choice1_1", choice1_1);
-    mo.addAttribute("choice1_2", choice1_2);
+    mo.addAttribute("choice1_1", "테슬라 모델 3");
+    mo.addAttribute("choice1_2", "아이오닉 6");
     return "star1";
   }
 
   @GetMapping("/star/2")
-  public String star2(HttpSession session, Model mo, String choice1) {
+  public String star2(Model mo, String choice1) {
     starRep.updateSemiCount(choice1);
-    session.setAttribute("choice1", choice1);
-    String choice2_1 = "포르쉐 타이칸";
-    String choice2_2 = "벤츠 EQE";
-    mo.addAttribute("choice2_1", choice2_1);
-    mo.addAttribute("choice2_2", choice2_2);
+    mo.addAttribute("choice1", choice1);
+    mo.addAttribute("choice2_1", "포르쉐 타이칸");
+    mo.addAttribute("choice2_2", "벤츠 EQE");
     return "star2";
   }
 
   @GetMapping("/star/3")
-  public String star3(HttpSession session, Model mo, String choice2) {
+  public String star3(Model mo, String choice1, String choice2) {
     starRep.updateSemiCount(choice2);
-    mo.addAttribute("choice1", session.getAttribute("choice1"));
+    mo.addAttribute("choice1", choice1);
     mo.addAttribute("choice2", choice2);
     return "star3";
   }
@@ -170,4 +166,5 @@ public class VanController1 {
     starRep.resetCount();
     return "redirect:/star/list";
   }
+
 } // Controller class
