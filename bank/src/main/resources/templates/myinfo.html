@@ -47,6 +47,9 @@
         </table>
         <p></p>
       </fieldset>
+      <input type="hidden" name="h_pw" th:value="${m.pw}" />
+      <input type="hidden" name="h_name" th:value="${m.name}" />
+      <input type="hidden" name="h_phone" th:value="${m.phone}" />
       <p>
         <a href="/menu">메뉴로 돌아가기</a> &nbsp;
         <input type="submit" value="변경된 내용으로 수정" />
