@@ -18,6 +18,7 @@
       <li><a href="/myinfo">회원정보조회 및 변경</a></li>
       <li><a href="/qa/question"> 게시판(Q&A)</a></li>
       <li><a href="/logout">logout</a></li>
+      <br />
       <li th:if="${id}=='admin'">
         <a href="/member/list">전체 회원 리스트 (admin only)</a>
       </li>
@@ -26,6 +27,9 @@
       </li>
       <li th:if="${id}=='admin'">
         <a href="/qa/answer">게시판 답변 등록 (admin only)</a>
+      </li>
+      <li th:if="${id}=='vadmin'">
+        <a href="/member/viplist">vip 회원 리스트 (vadmin only)</a>
       </li>
     </ul>
   </body>

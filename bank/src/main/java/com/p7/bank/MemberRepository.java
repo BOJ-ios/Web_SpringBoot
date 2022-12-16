@@ -1,5 +1,7 @@
 package com.p7.bank;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -29,4 +31,8 @@ public interface MemberRepository extends JpaRepository<Member, String> {
 
   @Query("select sum(balance) from Member")
   int findSum(); /* 총잔액 */
+
+  @Query("select b from Member b where balance>=50000000 order by b.id asc")
+  List<Member> findVip();
+
 } // interface

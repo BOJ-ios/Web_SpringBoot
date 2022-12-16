@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>Quiz</title>
+  </head>
+  <body>
+    <form method="post" action="/problem/result">
+      <h1>Quiz</h1>
+      <ol>
+        <li>
+          <p>대한민국의 수도는?</p>
+          <input type="radio" name="a1" value="서울" required />서울
+          <input type="radio" name="a1" value="평양" required />평양
+        </li>
+        <li>
+          <p>1+1</p>
+          <input type="radio" name="a2" value="2" required /> 2
+          <input type="radio" name="a2" value="3" required /> 3
+        </li>
+        <li>
+          <p>메뉴는 영어로</p>
+          <input type="radio" name="a3" value="menu" required /> menu
+          <input type="radio" name="a3" value="menew" required /> menew
+        </li>
+        <li>
+          <p>3*3</p>
+          <input type="radio" name="a4" value="9" required /> 9
+          <input type="radio" name="a4" value="10" required /> 10
+        </li>
+        <li>
+          <p>안녕은 영어로</p>
+          <input type="radio" name="a5" value="apple" required /> apple
+          <input type="radio" name="a5" value="hello" required /> hello
+        </li>
+      </ol>
+      <input type="submit" value="결과보기" />
+    </form>
+  </body>
+</html>

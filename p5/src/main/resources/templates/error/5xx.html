@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>500</title>
+  </head>
+  <body style="background-color: #e0f8f7">
+    <img src="/error5xx.png" width="320" height="250" alt="error5xx image" />
+    <span style="color: gray; font-size: 0.7em">photo by writer</span><br />
+    <h2>500번대 에러 페이지입니다.</h2>
+    <strong>에러 코드 : </strong><span th:text="${status}"></span><br />
+    <strong>path : </strong><span th:text="${path}"></span><br />
+    <strong>에러 이름 : </strong>
+    <span th:text="${error}" style="background-color: aqua"></span><br />
+    <strong>예외 : </strong><span th:text="${exception}"></span>
+    <p></p>
+    <p>
+      <strong style="background-color: yellow">trace ==></strong><br />
+      <span th:text="${trace}"></span>
+    </p>
+
+    <p></p>
+    <p>
+      <a href="/">첫 화면으로 돌아가기</a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymleaf.com">
+  <head>
+    <meta charset="utf-8" />
+    <title>Problem Result</title>
+  </head>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    td,
+    th {
+      border: 1px solid black;
+      vertical-align: middle;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <h2 th:text="|점수 : ${score}점 입니다!!!|">score</h2>
+    <h2 th:if="${score} eq 100" th:text="'만점입니다 wow~'">score</h2>
+    <table summary="정답 표">
+      <tr>
+        <th th:each="result, num:${list}" th:text="|${num.count}번 |"></th>
+      </tr>
+      <tr>
+        <td th:each="result:${list}" th:text="${result} ? 'O' : 'X'"></td>
+      </tr>
+    </table>
+    <div th:each="result, num:${list}">
+      <p>
+        <strong th:text="|${num.count}번 |"></strong>
+        <span th:if="${result} eq true" th:text="'정답입니다 ^^'"></span>
+        <span th:if="${result} eq false" th:text="'틀렸습니다. ㅠㅠ'"></span>
+      </p>
+    </div>
+    <a href="/problem">다시풀기</a>
+  </body>
+</html>

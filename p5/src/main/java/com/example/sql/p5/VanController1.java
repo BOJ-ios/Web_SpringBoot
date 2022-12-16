@@ -36,7 +36,7 @@ public class VanController1 {
 
   @GetMapping("/member/list")
   public String memberList(Model mo) {
-    List<Member> list = memRep.findAll();
+    List<Member> list = memRep.findAll(Sort.by(Sort.Direction.ASC, "id"));
     mo.addAttribute("list", list);
     return "memberList";
   }
